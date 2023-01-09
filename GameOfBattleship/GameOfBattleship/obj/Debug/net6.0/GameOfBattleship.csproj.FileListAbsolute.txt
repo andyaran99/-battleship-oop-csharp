@@ -1,0 +1,5 @@
+D:\MySavings\Module3Projects\polish\GameOfBattleship\GameOfBattleship\obj\Debug\net6.0\GameOfBattleship.csproj.AssemblyReference.cache
+D:\MySavings\Module3Projects\polish\GameOfBattleship\GameOfBattleship\obj\Debug\net6.0\GameOfBattleship.GeneratedMSBuildEditorConfig.editorconfig
+D:\MySavings\Module3Projects\polish\GameOfBattleship\GameOfBattleship\obj\Debug\net6.0\GameOfBattleship.AssemblyInfoInputs.cache
+D:\MySavings\Module3Projects\polish\GameOfBattleship\GameOfBattleship\obj\Debug\net6.0\GameOfBattleship.AssemblyInfo.cs
+D:\MySavings\Module3Projects\polish\GameOfBattleship\GameOfBattleship\obj\Debug\net6.0\GameOfBattleship.csproj.CoreCompileInputs.cache
