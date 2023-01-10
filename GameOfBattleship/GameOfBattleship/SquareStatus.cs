@@ -5,15 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GameOfBattleship
-{
-    public class SquareStatus
-    {
-        protected enum ShipType
+{ 
+    public enum SquareStatus
         {
-            empty,
-            hit,
-            miss,
-            sunken
+            Empty,
+            Hit,
+            Miss,
+            Ship
         }
-    }
 }

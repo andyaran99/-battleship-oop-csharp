@@ -12,9 +12,11 @@ namespace GameOfBattleship
         {
             return null; }
 
-        public Board ManualBoard(Board board, List<Ship> ships)
+        public void FillManualBoard(Board board, List<Ship> ships)
         {
-            return null;
+            
         }
+
+        
     }
 }

@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameOfBattleship
 {
-    public class ShipType
-    {
-        protected enum ShipTipe
+    public enum ShipType
         {
             Carrier,
             Cruiser,
@@ -16,5 +14,5 @@ namespace GameOfBattleship
             Submarine,
             Destroyer
         }
-    }
+
 }

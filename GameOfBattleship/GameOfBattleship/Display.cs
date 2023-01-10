@@ -19,5 +19,9 @@ namespace GameOfBattleship
 
         public void DisplayEndResults(Board boardWinner){}
 
+        public void DisplayNotValidDirection(){}
+
+        public void DisplayNotValidShipType() { }
+
     }
 }
