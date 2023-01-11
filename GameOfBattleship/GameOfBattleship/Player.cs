@@ -14,6 +14,12 @@ namespace GameOfBattleship
         {
             this.ships=ships;
         }
+
+        public List<Ship> GetShips()
+        {
+            return ships;
+
+        }
         protected bool isAlive { get; }
 
     }

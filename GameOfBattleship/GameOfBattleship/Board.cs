@@ -30,7 +30,8 @@ namespace GameOfBattleship
 
             foreach (var square in shipSquares)
             {
-                ocean[square.position.x,square.position.y].ChangeStatus(square,SquareStatus.Ship);
+                ocean[square.position.x,square.position.y].ChangeStatus(SquareStatus.Ship);
+               
             }
         }
 

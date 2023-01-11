@@ -46,14 +46,18 @@ namespace GameOfBattleship
         }
 
 
-        public void ChangeStatus(Square square,SquareStatus squareStatusToChange)
+        public void ChangeStatus(SquareStatus squareStatusToChange)
         {
-            square.squareStatus=squareStatusToChange;
+            squareStatus=squareStatusToChange;
         }
+
+
 
        public void SetSquarePosition(int x, int y)
        {
             position=(x,y);
        } 
+
+
     }
 }

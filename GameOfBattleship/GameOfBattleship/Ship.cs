@@ -12,22 +12,23 @@ namespace GameOfBattleship
         protected List<Square> squares;
         protected ShipType type { get; }
 
-
-        public Ship(List<Square> squares, ShipType type)
+       
+        public Ship(  ShipType shipType, (int x, int y) inputOfTheFirstSquareOfTheShip, string directionOfTheShip)
         {
-            this.squares = squares;
-            this.type = type;
+            squares= new List<Square>();
+            type = shipType;
+            MakeSquaresOfShip(inputOfTheFirstSquareOfTheShip, directionOfTheShip);
+            
         }
+       
 
-
-        public void CreateAShip((int x, int y) inputOfTheFirstSquareOfTheShip, string directionOfTheShip,
-            ShipType shipType)
+        private void MakeSquaresOfShip((int x, int y) inputOfTheFirstSquareOfTheShip, string directionOfTheShip)
         {
-            int shipLenght = makeShipLength(shipType);
+            int shipLenght = makeShipLength(type);
             Square square = new Square(inputOfTheFirstSquareOfTheShip, SquareStatus.Ship);
             squares.Add(square);
-            addShipSquares(shipLenght, inputOfTheFirstSquareOfTheShip, directionOfTheShip, shipType);
-
+            addShipSquares(shipLenght, inputOfTheFirstSquareOfTheShip, directionOfTheShip, type);
+            
         }
 
 
@@ -52,7 +53,7 @@ namespace GameOfBattleship
             }
         }
 
-        public Ship addShipSquares(int shipLenght,
+        public void addShipSquares(int shipLenght,
             (int x, int y) inputOfTheFirstSquareOfTheShip,
             string directionOfTheShip,
             ShipType shipType)
@@ -85,11 +86,10 @@ namespace GameOfBattleship
                         break;
                     default:
                         new Display().DisplayNotValidDirection();
-                        return null;
+                        break;
                 }
             }
 
-            return new Ship(squares, shipType);
         }
 
         public List<Square> GetShipSquares()
