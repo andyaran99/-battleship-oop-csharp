@@ -8,7 +8,7 @@ namespace GameOfBattleship
 {
     public class Square
     {
-        private (int x, int y) position;
+        public (int x, int y) position { get; private set; }
         protected SquareStatus squareStatus {get; set; }
 
 
@@ -36,6 +36,9 @@ namespace GameOfBattleship
                 case SquareStatus.Ship:
                     return " S ";
 
+                case SquareStatus.Dead:
+                    return " D ";
+
                 default:
                     return " ";
             }
@@ -48,9 +51,9 @@ namespace GameOfBattleship
             square.squareStatus=squareStatusToChange;
         }
 
-       public (int x, int y) GetSquarePosition()
+       public void SetSquarePosition(int x, int y)
        {
-           return position;
+            position=(x,y);
        } 
     }
 }

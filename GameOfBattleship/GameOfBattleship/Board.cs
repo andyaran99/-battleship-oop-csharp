@@ -12,11 +12,12 @@ namespace GameOfBattleship
 
         public Board(int boardLength)
         {
+            ocean = new Square[boardLength,boardLength];
             for (var i = 0; i < boardLength; i++)
             {
                 for (var j = 0; j < boardLength; j++)
                 {
-                    ocean[i,j]=(new Square((i, j), SquareStatus.Empty)); 
+                    ocean[i,j]=new Square((i, j), SquareStatus.Empty); 
                 }
                 
             }
@@ -29,11 +30,32 @@ namespace GameOfBattleship
 
             foreach (var square in shipSquares)
             {
-                ocean[square.GetSquarePosition().x,square.GetSquarePosition().y].ChangeStatus(square,SquareStatus.Ship);
+                ocean[square.position.x,square.position.y].ChangeStatus(square,SquareStatus.Ship);
             }
         }
 
-        
+
+        public override string ToString()
+
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (var i=0; i< ocean.GetLength(0);i++)
+            {
+                for (var j = 0; j < ocean.GetLength(1); j++)
+                {
+                    sb.Append("|");
+                    sb.Append(ocean[i,j].GetCharacter(ocean[i,j]));
+                }
+
+                sb.Append("\n");
+
+            }
+
+            return sb.ToString();
+        }
+
+
         public bool IsPlacementOk()
         {
             return true;

@@ -14,7 +14,10 @@ namespace GameOfBattleship
 
         public void FillManualBoard(Board board, List<Ship> ships)
         {
-            
+            foreach (var ship in ships)
+            {
+                board.AddShipToBoard(board,ship);
+            }
         }
 
         

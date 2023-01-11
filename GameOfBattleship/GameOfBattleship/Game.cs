@@ -10,7 +10,10 @@ namespace GameOfBattleship
 
         public void Start()
         {
-            Console.WriteLine("Hello, World!");
+            var display = new Display();
+            var board = new Board(10); 
+            
+            display.DisplayBoard(board);
         }
 
     }

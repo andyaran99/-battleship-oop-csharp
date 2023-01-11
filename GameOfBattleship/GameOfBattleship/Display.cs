@@ -11,7 +11,11 @@ namespace GameOfBattleship
 
         public void DisplayMainMenu(){}
 
-        public void DisplayBoard(Board board){}
+        public void DisplayBoard(Board board)
+        {
+            Console.WriteLine(board);
+            
+        }
 
 
         public void DisplayGame(Board palyer1Board, Board player2Board) {}

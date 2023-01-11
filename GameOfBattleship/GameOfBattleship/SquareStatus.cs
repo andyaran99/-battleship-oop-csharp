@@ -11,6 +11,7 @@ namespace GameOfBattleship
             Empty,
             Hit,
             Miss,
-            Ship
+            Ship,
+            Dead
         }
 }

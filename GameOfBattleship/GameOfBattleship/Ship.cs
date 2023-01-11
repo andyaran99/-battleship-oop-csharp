@@ -9,7 +9,7 @@ namespace GameOfBattleship
 {
     public class Ship
     {
-        private List<Square> squares;
+        protected List<Square> squares;
         protected ShipType type { get; }
 
 
@@ -20,12 +20,13 @@ namespace GameOfBattleship
         }
 
 
-        public void CreateAShip((int x,int y) inputOfTheFirstSquareOfTheShip, string directionOfTheShip, ShipType shipType)
+        public void CreateAShip((int x, int y) inputOfTheFirstSquareOfTheShip, string directionOfTheShip,
+            ShipType shipType)
         {
             int shipLenght = makeShipLength(shipType);
-            Square square = new Square(inputOfTheFirstSquareOfTheShip,SquareStatus.Ship);
+            Square square = new Square(inputOfTheFirstSquareOfTheShip, SquareStatus.Ship);
             squares.Add(square);
-            addShipSquares(shipLenght,inputOfTheFirstSquareOfTheShip,directionOfTheShip,shipType);
+            addShipSquares(shipLenght, inputOfTheFirstSquareOfTheShip, directionOfTheShip, shipType);
 
         }
 
@@ -51,7 +52,7 @@ namespace GameOfBattleship
             }
         }
 
-        public Ship addShipSquares(int shipLenght, 
+        public Ship addShipSquares(int shipLenght,
             (int x, int y) inputOfTheFirstSquareOfTheShip,
             string directionOfTheShip,
             ShipType shipType)
@@ -93,9 +94,10 @@ namespace GameOfBattleship
 
         public List<Square> GetShipSquares()
         {
-            return this.squares
+            return this.squares;
         }
 
 
 
+    }
 }
