@@ -13,7 +13,7 @@ namespace GameOfBattleship
         protected ShipType type { get; }
 
        
-        public Ship(  ShipType shipType, (int x, int y) inputOfTheFirstSquareOfTheShip, string directionOfTheShip)
+        public Ship((int x, int y) inputOfTheFirstSquareOfTheShip, string directionOfTheShip, ShipType shipType)
         {
             squares= new List<Square>();
             type = shipType;

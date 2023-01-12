@@ -13,34 +13,38 @@ namespace GameOfBattleship
         public void Start()
         {
             var display = new Display();
-            var board = new Board(10); //to do an input for board length from keyboard and validate it
-            display.DisplayBoard(board);
-            var initialCoord1 = (1, 6);
-            var initialCoord2 = (1, 8);
-            var initialCoord3 = (7, 8);
-            var direction1 = "down";
-            var direction2 = "left";
-            var shipType1 = ShipType.Battleship;
-            var shipType2 = ShipType.Cruiser;//to do input for initialCoord,direction and shipType and validate it
-            List<Ship>ships= new List<Ship>();
-            
-            
-            
+            var input= new Input();
 
-            var ship1 = new Ship(shipType1,initialCoord1,direction1 );
-            var ship2 = new Ship(shipType1,initialCoord2,direction1);
-            var ship3 =new Ship( shipType2,initialCoord3,direction2);
-            ships.Add(ship1);
-            ships.Add(ship2);
-            ships.Add(ship3);
-            var player1 = new Player(ships);
-            var boardFactory = new BoardFactory();
-            boardFactory.FillManualBoard(board,player1.GetShips());
-            display.DisplayBoard(board);
+            var boardSize = input.AskBoardLength();
+            var numberOfShips = input.AskForNumberOfShips();
+            var board1 = new Board(boardSize);
+            var board2 = new Board(boardSize);
+            PlacementPhase(board1,display,input,numberOfShips);
+            PlacementPhase(board2, display, input, numberOfShips);
+        }
 
+
+        public void PlacementPhase(Board boardInput,Display display,Input input,int numberOfShips)
+        {
+            List<Ship>ships=new List<Ship>();
+            while (numberOfShips > 0)
+            {
+                var initialCoord = input.AskForCoordonates();
+                var directionOfTheShip = input.AskForDirection();
+                var shipType = input.AskForShipType();
+                var ship = new Ship(initialCoord, directionOfTheShip, shipType);
+                ships.Add(ship);
+                numberOfShips -= 1;
+            }
+            var player=new Player(ships);
+            var boardFactory=new BoardFactory();
+            boardFactory.FillManualBoard(boardInput,ships);
+            display.DisplayBoard(boardInput);
+            
 
         }
 
+        public void Round(Player player1,Board board1,Player player2,Board board2){}
     }
     
 }
