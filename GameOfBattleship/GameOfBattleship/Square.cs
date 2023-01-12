@@ -56,7 +56,12 @@ namespace GameOfBattleship
        public void SetSquarePosition(int x, int y)
        {
             position=(x,y);
-       } 
+       }
+
+       public SquareStatus GetStatus()
+       {
+          return this.squareStatus;
+       }
 
 
     }

@@ -15,14 +15,5 @@ namespace GameOfBattleship
             g.Start();
         }
 
-
-
-        protected Display _display { get; set; }
-        protected Input _input { get; set; }
-
-        protected BoardFactory _BoardFactory { get; set; }
-
-        
-        
     }
 }

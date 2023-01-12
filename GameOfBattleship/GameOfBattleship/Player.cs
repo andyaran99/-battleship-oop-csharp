@@ -9,10 +9,11 @@ namespace GameOfBattleship
     public class Player
     {
         protected List<Ship> ships;
-
+        protected bool isAlive { get; }
         public Player(List<Ship> ships)
         {
             this.ships=ships;
+            isAlive = GetPlayerState(ships);
         }
 
         public List<Ship> GetShips()
@@ -20,7 +21,17 @@ namespace GameOfBattleship
             return ships;
 
         }
-        protected bool isAlive { get; }
+       
+        public bool returnIsAlive(Player player)
+        {
+            return isAlive;
+        }
+        public bool GetPlayerState(List<Ship> playerShips)
+        {
+            var validation = new Validations();
+            var result = validation.IsPlayerStillAlive(playerShips);
+            return result;
+        }
 
     }
 }

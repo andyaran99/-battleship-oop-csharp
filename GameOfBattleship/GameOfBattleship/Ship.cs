@@ -12,7 +12,7 @@ namespace GameOfBattleship
         protected List<Square> squares;
         protected ShipType type { get; }
 
-       
+       public Ship(){}
         public Ship((int x, int y) inputOfTheFirstSquareOfTheShip, string directionOfTheShip, ShipType shipType)
         {
             squares= new List<Square>();
@@ -65,22 +65,22 @@ namespace GameOfBattleship
                 switch (directionOfTheShip)
                 {
                     case "down":
-                        inputOfTheFirstSquareOfTheShip.x -= 1;
-                        square = new Square(inputOfTheFirstSquareOfTheShip, SquareStatus.Ship);
-                        squares.Add(square);
-                        break;
-                    case "up":
                         inputOfTheFirstSquareOfTheShip.x += 1;
                         square = new Square(inputOfTheFirstSquareOfTheShip, SquareStatus.Ship);
                         squares.Add(square);
                         break;
-                    case "left":
-                        inputOfTheFirstSquareOfTheShip.y -= 1;
+                    case "up":
+                        inputOfTheFirstSquareOfTheShip.x -= 1;
                         square = new Square(inputOfTheFirstSquareOfTheShip, SquareStatus.Ship);
                         squares.Add(square);
                         break;
                     case "right":
                         inputOfTheFirstSquareOfTheShip.y += 1;
+                        square = new Square(inputOfTheFirstSquareOfTheShip, SquareStatus.Ship);
+                        squares.Add(square);
+                        break;
+                    case "left":
+                        inputOfTheFirstSquareOfTheShip.y -= 1;
                         square = new Square(inputOfTheFirstSquareOfTheShip, SquareStatus.Ship);
                         squares.Add(square);
                         break;

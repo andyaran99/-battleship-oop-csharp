@@ -12,17 +12,13 @@ namespace GameOfBattleship
         public void DisplayMainMenu()
         {
             Console.WriteLine("Pick a game rule: ");
-            Thread.Sleep(1000);
             Console.WriteLine("1 - For a game Player vs Player on a 10 spaces board.");
-            Thread.Sleep(1000);
             Console.WriteLine("2 - For a game Player vs Player on a 20 spacesBoard.");
-            Thread.Sleep(1000);
         }
 
         public void DisplayBoard(Board board)
         {
             Console.WriteLine(board);
-            
         }
 
 
@@ -33,84 +29,87 @@ namespace GameOfBattleship
         }
 
 
-        public void DisplayEndResults(Board boardWinner){
-            Console.WriteLine(boardWinner);
+        public void DisplayGameResults(Board board1,Board board2)
+        {
+            Console.WriteLine("We have a winner");
+            Console.WriteLine("\n");
+            Console.WriteLine(board1);
+            Console.WriteLine(board2);
         }
 
-        public void DisplayNotValidDirection(){
+        public void DisplayNotValidDirection()
+        {
             Console.WriteLine("Not a valid direction!");
-            Thread.Sleep(1000);
             Console.WriteLine("Pls give a right direction!");
-            Thread.Sleep(1000);
-            DisplayDirectionOptions();
-            Thread.Sleep(1000);
-
         }
 
         public void DisplayDirectionOptions()
         {
             Console.WriteLine("A valid direction is: ");
-            Thread.Sleep(1000);
-            Console.WriteLine("1. Down.");
-            Thread.Sleep(1000);
-            Console.WriteLine("2. Up.");
-            Thread.Sleep(1000);
-            Console.WriteLine("3. Left.");
-            Thread.Sleep(1000);
-            Console.WriteLine("1. Right.");
-            Thread.Sleep(1000);
+            Console.WriteLine(" Down.");
+            Console.WriteLine(" Up.");
+            Console.WriteLine(" Left.");
+            Console.WriteLine(" Right.");
+            
         }
 
         public void DisplayNotValidShipType()
         {
             Console.WriteLine("Not a valid ship type!");
-            Thread.Sleep(1000);
             Console.WriteLine("Pls give a right ship type!");
-            Thread.Sleep(1000);
-            DisplayShipTypeOptions();
-            Thread.Sleep(1000);
+            
+
 
         }
         public void DisplayShipTypeOptions()
         {
             Console.WriteLine("A valid ship type is: ");
-            Thread.Sleep(1000);
             Console.WriteLine("1. Battleship.");
-            Thread.Sleep(1000);
             Console.WriteLine("2. Cruiser.");
-            Thread.Sleep(1000);
             Console.WriteLine("3. Carrier.");
-            Thread.Sleep(1000);
             Console.WriteLine("4. Destroyer");
-            Thread.Sleep(1000);
             Console.WriteLine("5. Submarine");
-            Thread.Sleep(1000);
-
         }
 
        
         
         public void PrintMessageForCoordonates()
         {
-            Console.WriteLine("Please give coordonates: ");
-            Thread.Sleep(1000);
-            Console.WriteLine("Valid coordonates are a letter from A-J followed by a number from 0-9");
-            Thread.Sleep(1000);
+            Console.WriteLine("Please give coordonates! ");
+            Console.WriteLine("Valid coordonates are a letter from A-J followed by a number from 1-10");
         }
+
+        public void PrintErrorMessageForCoordonates()
+        {
+            Console.WriteLine("Not valid cordonates ");
+        }
+
         public void CheckMessageForCoordonates((int,int)coord)
         {
             Console.WriteLine(coord.Item1);
             Console.WriteLine(coord.Item2);
-            Thread.Sleep(1000);
-
-
         }
+
         public void PrintMessageForNumberOfShips()
         {
-            Console.WriteLine("Please give coordonates: ");
-            Thread.Sleep(1000);
-            Console.WriteLine("Valid coordonates are a letter from A-J followed by a number from 0-9");
-            Thread.Sleep(1000);
+            Console.WriteLine("Please give valid number of ships! ");
+            Console.WriteLine("The ships can be up to 5 on a board! ");
         }
+
+        public void PrinErrorMessageForNumberOfShips()
+        {
+            Console.WriteLine("Not a valid number! ");
+        }
+
+        public void PlayerPreparation(string a){
+            Console.WriteLine($"Player {a} place your ships! ");
+        }
+
+        public void PlayerMove(string a)
+        {
+            Console.WriteLine($"Player {a} shoot at coordonates! ");
+        }
+
+
     }
 }

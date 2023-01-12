@@ -61,5 +61,10 @@ namespace GameOfBattleship
         {
             return true;
         }
+
+        public Square[,] GetBoardSquares(Board board)
+        {
+            return ocean;
+        }
     }
 }
