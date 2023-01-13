@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,7 +32,10 @@ namespace GameOfBattleship
             
         }
 
-
+        public ShipType GetShipType()
+        {
+            return type;
+    }
 
         public int makeShipLength(ShipType shipType)
         {
@@ -97,6 +101,14 @@ namespace GameOfBattleship
             return this.squares;
         }
 
+        public void MakeShipDead()
+        {
+            var squares = this.GetShipSquares();
+            foreach (var square in squares)
+            {
+                square.ChangeStatus(SquareStatus.Dead);
+            }
+        }
 
 
     }

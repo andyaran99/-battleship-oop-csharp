@@ -57,10 +57,7 @@ namespace GameOfBattleship
         }
 
 
-        public bool IsPlacementOk()
-        {
-            return true;
-        }
+        
 
         public Square[,] GetBoardSquares(Board board)
         {

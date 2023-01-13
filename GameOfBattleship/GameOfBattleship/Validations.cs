@@ -203,17 +203,20 @@ namespace GameOfBattleship
         {
             foreach (var ship in ships)
             {
+                Console.WriteLine(ship.GetShipSquares()[0]);
                 var squares = ship.GetShipSquares();
                 foreach (var square in squares)
                 {
-                    if (square.GetStatus() != SquareStatus.Ship)
+                    if (square.GetStatus()== SquareStatus.Ship)
                     {
-                        return false;
+                        return true;
                     }
                 }
 
+
             }
-            return  true;
+            
+            return false;
         }
 
         public bool IsShipDead(Ship ship)
@@ -221,7 +224,7 @@ namespace GameOfBattleship
             var squares = ship.GetShipSquares();
             foreach (var square in squares)
             {
-                if (square.GetStatus() != SquareStatus.Ship)
+                if (square.GetStatus() != SquareStatus.Hit)
                 {
                     return false;
                 }

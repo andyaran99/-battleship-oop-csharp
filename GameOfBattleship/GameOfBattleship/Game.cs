@@ -63,8 +63,10 @@ namespace GameOfBattleship
         {
             var display = new Display();
             
-            while (player1.GetPlayerState(player1.GetShips()) && player2.GetPlayerState(player2.GetShips()))
+            while (player1.GetPlayerState() && player2.GetPlayerState())
             {
+                Console.WriteLine(player1.GetPlayerState());
+                Console.WriteLine(player2.GetPlayerState());
                 display.PlayerMove("1");
                 makeMove(board2, player1);
                 display.PlayerMove("2");
@@ -81,17 +83,18 @@ namespace GameOfBattleship
             var validation = new Validations();
             var coordMove = input.AskForCoordonatesShoot(board);
             var ships = player.GetShips();
-            Shoot(coordMove,board);
+            Shoot(coordMove,board,ships);
             foreach (var ship in ships)
             {
                 if (validation.IsShipDead(ship))
                 {
-                    MakeShipDead(ship);
+
+                    ship.MakeShipDead();
                 }
             }
         }
 
-        public void Shoot((int row, int col) coord, Board board)
+        public void Shoot((int row, int col) coord, Board board,List<Ship> ships)
         {
             var squares = board.GetBoardSquares(board);
             if (squares[coord.row, coord.col].GetStatus() == SquareStatus.Empty)
@@ -100,8 +103,27 @@ namespace GameOfBattleship
             }
             if (squares[coord.row, coord.col].GetStatus() == SquareStatus.Ship)
             {
+                            Console.WriteLine("test1");
                 squares[coord.row, coord.col].ChangeStatus(SquareStatus.Hit);
+                            Console.WriteLine("test2");
+                foreach (var ship in ships)
+                {
+                            Console.WriteLine("test3");
+                    foreach (var square in ship.GetShipSquares())
+                    {
+                        Console.WriteLine("test4");
+
+                        if (square.position == coord)
+                        {
+                            Console.WriteLine("sq tst1 " +square.GetStatus());
+                            square.ChangeStatus(SquareStatus.Hit);
+                            Console.WriteLine("sq tst1 " + square.GetStatus());
+
+                        }
+                    }
+                }
             }
+            
         }
 
         public void MakeShipDead(Ship ship)
