@@ -53,7 +53,7 @@ For this project i had to implement a game of battleship. Battleship (also known
 4. The game will ask the players to pick the numbers of ships
 5. The game will ask a valid skyp type and starting position and the direction of each ship
 6. After each player have placed the ships they will begin to shoot on each other board
-7. the game will end when a player doesnt have any ships left
+7. The game will end when a player doesnt have any ships left
 
 ## In game image
 
