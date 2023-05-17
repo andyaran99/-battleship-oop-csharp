@@ -4,6 +4,8 @@
 
 For this project i had to implement a game of battleship. Battleship (also known as Battleships or Sea Battle) is a strategy type guessing game for two players. It is played on ruled grids (paper or board) on which each player's fleet of warships are marked. The locations of the fleets are concealed from the other player. Players alternate turns calling "shots" at the other player's ships, and the objective of the game is to destroy the opposing player's fleet.
 
+
+
 ## What I learned during this project
 
 -UML diagrams
@@ -28,7 +30,7 @@ For this project i had to implement a game of battleship. Battleship (also known
 
 
 
-##The implementation process of the game
+## The implementation process of the game
 
 - Gaining good understanding of the OOP principles and implement them in your code.
 - Implementing the Battleship class. This is used as the highest level class.
@@ -44,7 +46,7 @@ For this project i had to implement a game of battleship. Battleship (also known
 - Implementing the SquareStatus enum.
 
 
-##How to Play
+## How to Play
 1. Clone the repository localy from the github
 2. Run the game 
 3. Choose the board length
@@ -53,7 +55,7 @@ For this project i had to implement a game of battleship. Battleship (also known
 6. After each player have placed the ships they will begin to shoot on each other board
 7. the game will end when a player doesnt have any ships left
 
-##In game image
+## In game image
 
 ![Capture8](https://github.com/andyaran99/-battleship-oop-csharp/assets/106445157/9f94103c-fe28-465d-a8cc-ccedf7636b66)
 
